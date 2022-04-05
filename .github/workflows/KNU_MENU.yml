@@ -33,8 +33,8 @@ jobs:
         #if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Download chromedriver
       run: |
-        wget -q -O tmp.zip https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
-        unzip tmp.zip && rm tmp.zip
+        (New-Object System.Net.WebClient).DownloadFile('https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip', 'chromedriver.zip')
+        tar -zxvf [chromedriver.zip] -C [chromedriver.zip]
     - name: Tweets
       run: |
         python3 "main.py"
