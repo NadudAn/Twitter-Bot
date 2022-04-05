@@ -14,7 +14,7 @@ filelock==3.6.0
 h11==0.13.0
 idna==3.3
 lxml==4.6.2
-numpy @ file:///C:/Users/%EC%95%88%EB%82%98%EC%98%81/Downloads/numpy-1.19.4-cp38-cp38-win32.whl
+#numpy @ file:///C:/Users/%EC%95%88%EB%82%98%EC%98%81/Downloads/numpy-1.19.4-cp38-cp38-win32.whl
 oauthlib==3.2.0
 outcome==1.1.0
 pandas==1.1.4
