@@ -28,31 +28,33 @@ try:
 except KeyError as e:
     print(e)
 
-
-
-driver = webdriver.Chrome(executable_path="chromedriver")
-url = "https://www.kongju.ac.kr/kongju/13157/subview.do?enc=Zm5jdDF8QEB8JTJGZGlldCUyRmtvbmdqdSUyRjYlMkZ2aWV3LmRvJTNGbW9uZGF5JTNEMjAyMi4wMy4yOCUyNndlZWslM0RuZXh0JTI2"
-driver.get(url)
-
-soup = BeautifulSoup(driver.page_source, 'html.parser')
-
 day = {
-    'Mon' : 0,
-    'Tue' : 1,
-    'Wed' : 2,
-    'Thu' : 3,
-    'Fri' : 4,
-    'Sat' : 5,
-    'Sun' : 6
-}
+        'Mon' : 0,
+        'Tue' : 1,
+        'Wed' : 2,
+        'Thu' : 3,
+        'Fri' : 4,
+        'Sat' : 5,
+        'Sun' : 6
+    }
 
-date = str(soup.find('th', class_='on').get_text())
-date = date.replace("  ", " ")
+try: 
+    driver = webdriver.Chrome(executable_path="chromedriver")
+    url = "https://www.kongju.ac.kr/kongju/13157/subview.do?enc=Zm5jdDF8QEB8JTJGZGlldCUyRmtvbmdqdSUyRjYlMkZ2aWV3LmRvJTNGbW9uZGF5JTNEMjAyMi4wMy4yOCUyNndlZWslM0RuZXh0JTI2"
+    driver.get(url)
 
-menus = soup.find_all('td')
-menu = str(menus[day[str(time.strftime('%a', time.localtime(time.time())))]].get_text())
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-today = date + "\n\n" + menu
+    date = str(soup.find('th', class_='on').get_text())
+    date = date.replace("  ", " ")
 
-api = tweepy.API(auth)
-api.update_status(status = today)
+    menus = soup.find_all('td')
+    menu = str(menus[day[str(time.strftime('%a', time.localtime(time.time())))]].get_text())
+
+    today = date + "\n\n" + menu
+
+    api = tweepy.API(auth)
+    api.update_status(status = today)
+
+except tweepy.errors.TweepyException as e:
+    print(e)
