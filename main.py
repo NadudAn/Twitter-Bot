@@ -1,6 +1,13 @@
+#-----------------------------------
 # Project: twitter_project
 # Author: Nayeong An
 # Date: 2022-04-06
+#-----------------------------------
+# Project: twitter_project
+# Author: Nayeong An
+# Date: 2022-04-07
+# Content: Chrome Driver Error Correction
+#-----------------------------------
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -39,7 +46,13 @@ day = {
     }
 
 try: 
-    driver = webdriver.Chrome(executable_path="chromedriver")
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')               # headless
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--disable-gpu')
+    
+    driver = webdriver.Chrome(executable_path="chromedriver", options=chrome_options)
     url = "https://www.kongju.ac.kr/kongju/13157/subview.do?enc=Zm5jdDF8QEB8JTJGZGlldCUyRmtvbmdqdSUyRjYlMkZ2aWV3LmRvJTNGbW9uZGF5JTNEMjAyMi4wMy4yOCUyNndlZWslM0RuZXh0JTI2"
     driver.get(url)
 
