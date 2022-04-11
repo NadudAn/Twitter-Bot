@@ -16,7 +16,6 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 import time
-import os
 
 API_KEY = 'TWITTER_API_KEY'
 API_KEY_SECRET = 'TWITTER_API_SECRET'
@@ -53,7 +52,7 @@ try:
     chrome_options.add_argument('--disable-gpu')
     
     driver = webdriver.Chrome(executable_path="chromedriver", options=chrome_options)
-    url = "https://www.kongju.ac.kr/kongju/13157/subview.do?enc=Zm5jdDF8QEB8JTJGZGlldCUyRmtvbmdqdSUyRjYlMkZ2aWV3LmRvJTNGbW9uZGF5JTNEMjAyMi4wMy4yOCUyNndlZWslM0RuZXh0JTI2"
+    url = "https://www.kongju.ac.kr/kongju/13157/subview.do"
     driver.get(url)
 
     soup = BeautifulSoup(driver.page_source, 'html.parser')
