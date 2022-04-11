@@ -8,6 +8,11 @@
 # Date: 2022-04-07
 # Content: Chrome Driver Error Correction
 #-----------------------------------
+# Project: twitter_project
+# Author: Nayeong An
+# Date: 2022-04-11
+# Content: update url
+#-----------------------------------
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -16,6 +21,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 import time
+import os
 
 API_KEY = 'TWITTER_API_KEY'
 API_KEY_SECRET = 'TWITTER_API_SECRET'
