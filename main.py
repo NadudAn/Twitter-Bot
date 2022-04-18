@@ -12,7 +12,12 @@
 # Author: Nayeong An
 # Date: 2022-04-11
 # Content: update url
-#-----------------------------------
+# -----------------------------------
+# Project: twitter_project
+# Author: Nayeong An
+# Date: 2022-04-18
+# Content: Work on weekdays only
+# -----------------------------------
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -50,29 +55,35 @@ day = {
         'Sun' : 6
     }
 
-try: 
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')               # headless
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--disable-gpu')
+day_index = str(time.strftime('%a', time.localtime(time.time())));
+
+def tweets():
+    try: 
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')               # headless
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--disable-gpu')
     
-    driver = webdriver.Chrome(executable_path="chromedriver", options=chrome_options)
-    url = "https://www.kongju.ac.kr/kongju/13157/subview.do"
-    driver.get(url)
+        driver = webdriver.Chrome(executable_path="chromedriver", options=chrome_options)
+        url = "https://www.kongju.ac.kr/kongju/13157/subview.do"
+        driver.get(url)
 
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-    date = str(soup.find('th', class_='on').get_text())
-    date = date.replace("  ", " ")
+        date = str(soup.find('th', class_='on').get_text())
+        date = date.replace("  ", " ")
 
-    menus = soup.find_all('td')
-    menu = str(menus[day[str(time.strftime('%a', time.localtime(time.time())))]].get_text())
+        menus = soup.find_all('td')
+        menu = str(menus[day[day_index]].get_text())
 
-    today = date + "\n\n" + menu
+        today = date + "\n\n" + menu
 
-    api = tweepy.API(auth)
-    api.update_status(status = today)
+        api = tweepy.API(auth)
+        api.update_status(status = today)
 
-except tweepy.errors.TweepyException as e:
-    print(e)
+    except tweepy.errors.TweepyException as e:
+        print(e)
+
+if day_index < 5:
+    tweets()
