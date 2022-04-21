@@ -18,6 +18,11 @@
 # Date: 2022-04-18
 # Content: Work on weekdays only
 # -----------------------------------
+# Project: twitter_project
+# Author: Nayeong An
+# Date: 2022-04-21
+# Content: Corrected errors
+# -----------------------------------
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -85,5 +90,5 @@ def tweets():
     except tweepy.errors.TweepyException as e:
         print(e)
 
-if day_index < 5:
+if day[day_index] < 5:
     tweets()
