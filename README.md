@@ -48,6 +48,8 @@
 
 ## 🤖 KNU Cafeteria Menu Update Bot 🤖  
 
+> [You can check more info about this project](https://nadudan.github.io/Twitter-Bot/)
+
 > If you have a problem with a 7-digit pin not appearing on the access token issue, please check this article.<br> 
 > [[Twitter API] 개발자 계정 외 자동봇의 액세스 토큰 발급(7자리 PIN이 뜨지 않는 경우)](https://blog.naver.com/dsd932/222691491322) 
 
