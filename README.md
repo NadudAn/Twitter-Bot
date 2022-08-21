@@ -84,5 +84,9 @@ To be Updated
 
 ### account image
 
-![KakaoTalk_20220516_010114729](https://user-images.githubusercontent.com/84761609/168484504-eb4d57c8-3cb5-4773-9599-d8c44f3d98e6.jpg)
-![KakaoTalk_20220516_010114729_01](https://user-images.githubusercontent.com/84761609/168484508-b245150d-1f93-4790-a2b5-57de6fd8ae1b.jpg)
+<div align="center">
+<a href="https://github.com/NadudAn">
+  <img height="800em" src="https://user-images.githubusercontent.com/84761609/168484504-eb4d57c8-3cb5-4773-9599-d8c44f3d98e6.jpg"/>
+  <img height="800em" src="https://user-images.githubusercontent.com/84761609/168484508-b245150d-1f93-4790-a2b5-57de6fd8ae1b.jpg"/>
+</a>
+</div>
