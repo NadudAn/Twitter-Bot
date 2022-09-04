@@ -23,6 +23,11 @@
 # Date: 2022-04-21
 # Content: Corrected errors
 # -----------------------------------
+# Project: twitter_project
+# Author: Nayeong An
+# Date: 2022-09-04
+# Content: Revising a code
+# -----------------------------------
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -82,6 +87,9 @@ def tweets():
         menus = soup.find_all('td')
         menu = str(menus[day[day_index]].get_text())
 
+        if menu != "등록된 식단내용이(가) 없습니다.": flag = True
+        else: flag = False
+        
         today = date + "\n\n" + menu
 
         api = tweepy.API(auth)
@@ -90,5 +98,5 @@ def tweets():
     except tweepy.errors.TweepyException as e:
         print(e)
 
-if day[day_index] < 5:
+if (day[day_index] < 5) and (flag):
     tweets()

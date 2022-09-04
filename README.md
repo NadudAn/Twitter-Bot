@@ -50,9 +50,6 @@
 
 > [You can check more info about this project](https://nadudan.github.io/Twitter-Bot/)
 
-> If you have a problem with a 7-digit pin not appearing on the access token issue, please check this article.<br> 
-> [[Twitter API] 개발자 계정 외 자동봇의 액세스 토큰 발급(7자리 PIN이 뜨지 않는 경우)](https://blog.naver.com/dsd932/222691491322) 
-
 <br>
 
 | Start Date      | 2022-04-03 |
@@ -86,7 +83,7 @@ To be Updated
 
 <div align="center">
 <a href="https://github.com/NadudAn">
-  <img height="800em" src="https://user-images.githubusercontent.com/84761609/168484504-eb4d57c8-3cb5-4773-9599-d8c44f3d98e6.jpg"/>
-  <img height="800em" src="https://user-images.githubusercontent.com/84761609/168484508-b245150d-1f93-4790-a2b5-57de6fd8ae1b.jpg"/>
+  <img height="600em" src="https://user-images.githubusercontent.com/84761609/168484504-eb4d57c8-3cb5-4773-9599-d8c44f3d98e6.jpg"/>
+  <img height="600em" src="https://user-images.githubusercontent.com/84761609/168484508-b245150d-1f93-4790-a2b5-57de6fd8ae1b.jpg"/>
 </a>
 </div>
