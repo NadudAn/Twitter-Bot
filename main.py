@@ -90,13 +90,14 @@ def tweets():
         if menu != "등록된 식단내용이(가) 없습니다.": flag = True
         else: flag = False
         
-        today = date + "\n\n" + menu
+        if flag:
+            today = date + "\n\n" + menu
 
-        api = tweepy.API(auth)
-        api.update_status(status = today)
+            api = tweepy.API(auth)
+            api.update_status(status = today)
 
     except tweepy.errors.TweepyException as e:
         print(e)
 
-if (day[day_index] < 5) and (flag):
+if day[day_index] < 5:
     tweets()
