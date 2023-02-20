@@ -1,5 +1,7 @@
 # Crawling Project
 
+> 트위터 API 유료화에 따라 봇 가동을 중지하였습니다.
+
 <table> 
   <tr>
     <td>프로젝트명</td>
