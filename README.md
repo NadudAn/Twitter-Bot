@@ -50,7 +50,7 @@
 
 ## 🤖 KNU Cafeteria Menu Update Bot 🤖  
 
-> [You can check more info about this project](https://nadudan.github.io/Twitter-Bot/)
+> [You can check more info about this project](https://ahma0.github.io/posts/Twitter-Bot/)
 
 <br>
 
